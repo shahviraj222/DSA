@@ -9,12 +9,10 @@ struct arr
 } a1;
 void display(int a[])                //passing throug array
   {
-    printf("Your element:");
+      printf("Your element:");
     for (int  i = 0; i<a1.length; i++)
     {
-    
-       printf("%d ",a1.a[i]);
-    
+        printf("%d ",a[i]);
     }
         
 }
