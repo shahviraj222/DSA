@@ -18,6 +18,8 @@ void hash_method(char *a)
     
 }
 // same approch as in hash method but diffrance is only that we use bit insted of array
+// debug this program
+// not runing 
 void bit_method(char *a)
 {
   int h=0,x=0;          //compilare is 16bit my int size is 4byte
