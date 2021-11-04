@@ -15,7 +15,7 @@ void craet_node(struct node *temp,int a[])
         temp->data=a[i];
         temp=temp->next;
     }
-    temp->next=NULL;
+    temp->next=NULL;                                //we have to assign the end of node 
     
 }
 void display(struct node *temp)
@@ -27,6 +27,14 @@ void display(struct node *temp)
     }
     
 }
+void diplay_recursive(struct node *temp)
+{
+    if(temp->next!=NULL)
+    {
+        printf("%d ",temp->data);
+        diplay_recursive(temp->next);
+    }
+}
 int main()
 {
     struct node *head;
@@ -34,5 +42,6 @@ int main()
     int a[10]={10,20,2,6,262,5,1,15,205,45};
     craet_node(head,a);
     display(head);
+    diplay_recursive(head);
     return 0;
 }
