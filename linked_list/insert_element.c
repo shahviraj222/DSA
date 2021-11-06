@@ -39,22 +39,26 @@ struct node* insert(struct node *t,int data)
     return temp;  
 }
 
-// value is add after the given index
+// value is add at the given index 
 void insert_at_index(struct node *t,int data,int index)
 {
     int i=0;
     struct node *temp;
     temp=(struct node*)malloc(sizeof(struct node));
- while (i<index)
+ while (i<index-1 && t->next)
  {
     t=t->next;
     i++;
  }
+ if(t->next)
+ {
  temp->next=t->next;
  temp->data=data;
  t->next=temp;
-  printf("the value at index is %d\n",t->data);   
-}
+  printf("the value at index is %d\n",t->data); 
+ }  
+ printf("this is runing");
+ }
 int main()
 {
      int a[10]={12,2,0,50,621,564,451,451,45,230};
@@ -62,7 +66,7 @@ int main()
     struct node *head;
     craet_node(head,a);
     display(head);
-    head= insert(head,data);
-    insert_at_index(head,data,3);
+    // head= insert(head,data);
+    insert_at_index(head,data,10);      //here index num = position-1
     display(head);
 }
