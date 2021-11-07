@@ -33,6 +33,7 @@ void insert(struct node *temp,int data)
     struct node *q;
     struct node *w;
     w=(struct node*) malloc(sizeof(struct node));
+    //when you get sengmention fault then also check the loop condition
     while (temp && data > temp->data)
     {
        q=temp;
