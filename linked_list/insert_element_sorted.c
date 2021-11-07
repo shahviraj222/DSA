@@ -43,15 +43,3 @@ void insert(struct node *temp,int data)
     w->next = q->next;
     q->next = w;
 }
-
-
-int main()
-{
-    int a[10]={1,2,23,50,62,66,71,85,95,230};
-    int data=85;
-    struct node *head;
-    craet_node(head,a);
-    insert(head,120);
-    display(head);
-    return 0;
-}
