@@ -39,11 +39,28 @@ void RDisplay(struct Node *p)
         printf("%d ", p->data);
     }
 }
+//reverse linked list using tail recursion function
+void reverse_r(struct Node *q, struct Node *p)
+{
+    if(p!=NULL)
+    {
+        reverse_r(p,p->next);    //this excute when above condition not became false 
+        p->next=q;               //when p became last node then this line execute 
+    }
+    else
+    {
+        first=q;
+    }
+
+}
 int main()
 {
     struct Node *temp;
     int A[] = {3, 5, 7, 10, 25, 8, 32, 2};
     create(A, 8);
+    Display(first);
+    printf("\n");
+    reverse_r(NULL,first);
     Display(first);
     return 0;
 }

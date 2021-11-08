@@ -22,10 +22,10 @@ void craet_node(struct node *temp,int a[])
     
 }
 void display(struct node *temp)
-{
-    while (temp!= 0)
+{ 
+    while (temp!= 0)                             //proof of extra node is created if you want hide extra node then make change in condition put"temp->next" **if you make this then link reverse not work
     {
-          printf("%d ",temp->data);
+          printf("%d ",temp->data); 
           temp=temp->next;
     }
     

@@ -15,7 +15,7 @@ void craet_node(struct node *temp, int a[])
         temp->data = a[i];
         temp = temp->next;
     }
-    temp->next = NULL; //we have to assign the end of node
+    temp->next = NULL;                 //we have to assign the end of node
 }
 void display(struct node *temp)
 {
