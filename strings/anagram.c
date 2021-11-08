@@ -1,8 +1,10 @@
+// anagram means having same letter in both string basically combination of all letter are allowed
 #include <stdio.h>
+//using hash method we check anagram
 void check(char *A, char *B)
 {
-    int h[26] = {0};
-    printf("%d %d", sizeof(A), sizeof(B)); // value of A,B are here
+    int h[26] = {0};                       // intialize all the element zero
+    printf("%d %d", sizeof(A), sizeof(B)); // value of A,B are here is not working
     if (sizeof(A) != sizeof(B))            // this logic don't work
     {
         printf("Not anagram");
@@ -17,7 +19,7 @@ void check(char *A, char *B)
         for (i = 0; B[i] != '\0'; i++)
         {
             h[A[i] - 97]--;
-            if (h[i] == 0) //zero is greater if h[i]=-1
+            if (h[i] == 0)                       //zero is greater if h[i]=-1
             {
                 printf("\nnot anagram");
                 break;
@@ -34,6 +36,6 @@ int main()
     char a[] = "decimal";
     char b[] = "sa";
     check(a, b);
-    printf("\nvalue in main %d %d", sizeof(a), sizeof(b));
+    printf("\nvalue in main %d %d", sizeof(a), sizeof(b)); //here value of a,b is given right
     return 0;
 }
