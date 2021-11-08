@@ -14,7 +14,7 @@ void craet_node(struct node *temp,int a[])
     for ( int i = 0; i <10 ; i++)
     {
         // printf("runing");
-        temp->next=(struct node *) malloc(sizeof(struct node));
+        temp->next=(struct node *) malloc(sizeof(struct node)); //here one extra node is created
         temp->data=a[i];
         temp=temp->next;
     }
@@ -51,6 +51,7 @@ void reverse_ele(struct node *first)
     }
     
 }
+//reversing link list and also having data of next node and previous node or have point on it
 struct node * revers_link(struct node *first)
 {
     struct node *p=first;
@@ -73,7 +74,10 @@ int main()
     struct node *head;
     int data=85;
     craet_node(head,a);
-    head=revers_link(head);
+    // head=revers_link(head);
+    display(head);
+    printf("\n");
+    reverse_ele(head);
     display(head);
     return 0;
 }
