@@ -43,3 +43,15 @@ void insert(struct node *temp,int data)
     w->next = q->next;
     q->next = w;
 }
+int main()
+{
+    struct node *head;
+    head=(struct node *) malloc(sizeof(struct node));
+    int a[10]={12,20,40,50,301,302,401,451,600};           //array must be sorted
+    craet_node(head,a);
+    display(head);
+    insert(head,45);
+    printf("\n");
+    display(head);
+    return 0;
+}
