@@ -31,6 +31,8 @@ void Display(struct Node *p)
         p = p->next;
     }
 }
+// here time complexity is order of n. T(n)=O(n)
+//it is more for some case by using hash table we reduce time
 int has_cycle(struct Node *head)
 {
     struct Node *p = head;
