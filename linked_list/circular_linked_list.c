@@ -33,7 +33,6 @@ void Display(struct Node *p)
         printf("%d ",p->data);
         Display(p->next);
     }
-  
 }
 int main()
 {
