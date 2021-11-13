@@ -101,7 +101,7 @@ void reverse(struct Node *p)
         p->pre=temp;
         p=p->pre;              //pointing to next node
         //pointing first to last node 
-        if (p!=NULL && p->next==NULL)
+        if (p!=NULL && p->next==NULL)         // here one extra case run if we don't write p!=NULL
         {
             first=p;
         }
