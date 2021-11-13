@@ -89,12 +89,33 @@ void delete(struct Node *p,int po)
         
     }
 }
+//we have to inter change next to pre
+void reverse(struct Node *p)
+{
+    struct Node *temp;
+    while (p!=NULL)
+    {
+        //inter change process done here 
+        temp=p->next;     
+        p->next=p->pre;
+        p->pre=temp;
+        p=p->pre;              //pointing to next node
+        //pointing first to last node 
+        if (p!=NULL && p->next==NULL)
+        {
+            first=p;
+        }
+        
+    }
+    
+}
 int main()
 {
     int a[10]={4,51,6,5,51,54,514,45,4104,44};
     create(a,10);
     // insert(500,2);       //taking data and index number
     delete(first,9);        //taking data and index number not position    
+    reverse(first);
     Display(first);
     return 0;
 }
