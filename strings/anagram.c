@@ -1,11 +1,13 @@
 // anagram means having same letter in both string basically combination of all letter are allowed
 #include <stdio.h>
+#include<string.h>
 //using hash method we check anagram
 void check(char *A, char *B)
 {
     int h[26] = {0};                       // intialize all the element zero
     printf("%d %d", sizeof(A), sizeof(B)); // value of A,B are here is not working
-    if (sizeof(A) != sizeof(B))            // this logic don't work
+    //here i have to say strlen(a) and strlen(b) then work #include<string.h>
+    if (sizeof(A) != sizeof(B))            // this logic don't work 
     {
         printf("Not anagram");
     }
