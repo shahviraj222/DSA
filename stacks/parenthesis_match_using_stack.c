@@ -106,11 +106,9 @@ int IsParenthesis(char *s)
             }
         }
         
-        
-    }
+     }
     printf("Value of match:");
     return IsEmpty(a);
-
 }
 int main()
 {
