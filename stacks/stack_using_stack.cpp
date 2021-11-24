@@ -26,7 +26,7 @@ public:
     void Display();
 };
 //here we are saying that the member of class which return void
-// inside the class stack name is push
+// inside the class stack name is push scope resolution is use to define function
 void Stack::push(int data)
 {
     Node *t = new Node; //here pointer t created and intialize with node one class pointed
