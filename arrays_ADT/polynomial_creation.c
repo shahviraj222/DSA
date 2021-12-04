@@ -77,10 +77,7 @@ void add_polynomial(struct poly p1,struct poly p2)
     for (size_t i = 0; i < p3.n; i++)
     {
         printf("%d %d +",p3.t[i].coie,p3.t[i].expo);
-    }
-    
-    
-    
+    }     
 }
 int main() 
 {
