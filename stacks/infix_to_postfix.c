@@ -4,7 +4,7 @@
 #include<string.h>
 struct Node
 {
-    int data;
+    char data;
     struct Node* next;
 }*top=NULL;                   //here we are creating pointer of structure and pointing null
 
@@ -151,6 +151,8 @@ char *convert(char *infix)
 }
 int main()
 {
-
+    char *A="a+12*5-6";
+    A=convert(A);
+    printf("After converting infix=%s",A);
     return 0;
 }
