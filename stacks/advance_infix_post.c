@@ -192,6 +192,7 @@ int evaluation(char *a)
         }
         
     }
+    b=pop(b);
     return r;
 }
 // this can only convert the +,-,*,/
@@ -269,7 +270,7 @@ void convert(char *p)
         
     }
     k=0;
-    printf("\nEvaluation of your function is:");
+    printf("Evaluation of your function is:");
     while (q[k]!='\0')
     {
         printf("%c ",q[k]);
