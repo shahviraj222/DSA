@@ -9,6 +9,7 @@ struct node
     struct node* next;
 };
 char popdata;
+
 // in stack we insert the element at first or replace head
 struct node* push(struct node* head,int data)
 {
@@ -140,6 +141,59 @@ int isOperator(char x)
         return 0;
     }
 }
+int evaluation(char *a)
+{
+    struct node *b=NULL;
+    int i,x1,x2,r;
+    for ( i = 0;a[i]!='\0'; i++)
+    {
+        if (!isOperator(a[i]))
+        {
+            // printf("\n a[i]=%c",a[i]);
+            b=push(b,a[i]-'0'); //this is use to convert my string into integer value
+        }
+        else
+        {
+            b=pop(b);
+            x2=popdata;
+            b=pop(b);
+            x1=popdata;
+            switch (a[i])
+            {
+            case '+':
+                // printf("\nx1=%d",x1);
+                r=x1+x2;
+                b=push(b,r);
+                break;
+            
+            case '-':
+                r=x1-x2;
+                b=push(b,r);
+                break;
+            case '/':
+                r=x1/x2;
+                b=push(b,r);
+                break;
+            case '*' :
+                r=x1*x2;
+                b=push(b,r);
+                break;
+            case '^':
+                r=1;
+                for (int i = 0; i < x2; i++)
+                {
+                    r=r*x1;
+                }  
+                b=push(b,r);
+                break;    
+            default: 
+                break;   
+            }
+        }
+        
+    }
+    return r;
+}
 // this can only convert the +,-,*,/
 // here my length reduces due to we don't print brackets
 void convert(char *p)
@@ -188,6 +242,8 @@ void convert(char *p)
         q[j++]=popdata;
     }
     q[j]='\0';
+    // strcpy(result,q);
+    // printf("MYstring in r=%s",result);
     int k=0;
     printf("\nAfter converting into postfix:");
     while (q[k]!='\0')
@@ -195,16 +251,38 @@ void convert(char *p)
         printf("%c",q[k]);
         k++;
     }
-    
+    int z=0;
+    printf("\n!!HERE MY VARIABLE TAKE VALUE FROM 0 to 9 ONLY!!\n");
+    while(q[z]!='\0')
+    {
+        if (isOperator(q[z]))
+        {
+            z++;
+        }
+        else
+        {
+            fflush(stdin);
+            printf("Enter the value of %c =",q[z]);
+            scanf("%c",&q[z]);
+            z++;
+        }
+        
+    }
+    k=0;
+    printf("\nEvaluation of your function is:");
+    while (q[k]!='\0')
+    {
+        printf("%c ",q[k]);
+        k++;
+    }
+    printf("= %d",evaluation(q));
 }
-int evalvation(char *a)
-{
 
-}
 int main()
 { 
-    char *a="5+6/2*{45-3}";
-    printf("%d",strlen(a)+1);
+    char a[100];
+    printf("Enter your string:");
+    scanf("%s",&a);
     convert(a);
-    
+    return 0; 
 }
