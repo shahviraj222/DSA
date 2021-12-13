@@ -1,5 +1,3 @@
-// only for + , - , * , / this precidions are taken bracket's wala not cover 
-// pushing the operators (+ - * /)only not oprand(like a,b,c) 
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>

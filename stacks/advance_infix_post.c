@@ -193,7 +193,7 @@ int evaluation(char *a)
         
     }
     b=pop(b);
-    return r;
+    return popdata;
 }
 // this can only convert the +,-,*,/
 // here my length reduces due to we don't print brackets
