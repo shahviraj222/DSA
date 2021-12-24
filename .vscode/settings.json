@@ -4,6 +4,10 @@
         "stdio.h": "c",
         "random": "c",
         "array": "c",
-        "string": "c"
+        "string": "c",
+        "deque": "c",
+        "forward_list": "c",
+        "list": "c",
+        "vector": "c"
     }
 }
