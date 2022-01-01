@@ -56,51 +56,24 @@ int binarySearch(int arr[], int l, int r, int x)
     return -1;
 }
 // this is use to find key element from descanding order
-int binarySearch_de(int arr[], int N, int X)
+int descendingBinarySearch(int arr[], int low, int high, int key)
 {
-    // Store the first index of the
-    // subarray in which X lies
-    int start = 0;
-
-    // Store the last index of the
-    // subarray in which X lies
-    int end = N;
-
-    while (start <= end)
+    while (low<=high)
     {
-
-        // Store the middle index
-        // of the subarray
-        int mid = start + (end - start) / 2;
-
-        // Check if value at middle index
-        // of the subarray equal to X
-        if (X == arr[mid])
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == key)
         {
-
-            // Element is found
             return mid;
         }
-
-        // If X is smaller than the value
-        // at middle index of the subarray
-        else if (X < arr[mid])
+        if (arr[mid] < key)
         {
-
-            // Search in right
-            // half of subarray
-            start = mid + 1;
+            high = mid - 1;
         }
         else
         {
-
-            // Search in left
-            // half of subarray
-            end = mid - 1;
+            low = mid + 1;
         }
     }
-
-    // If X not found
     return -1;
 }
 int max(int a[], int n)
@@ -120,22 +93,21 @@ int max(int a[], int n)
 int bitsearch(int arr[], int n, int k)
 {
     int max_index;
-    int r1, r2;
-    if (checkBitonic(arr, n))
+    int r1;
+    printf("Your bitonic array is:");
+    for (int i = 0; i < n; i++)
     {
-        max_index = max(arr, n);
-        r1 = binarySearch(arr, 0, max_index - 1, k);
-        if (r1 == -1)
-        {
-            r1 = binarySearch_de(&arr[max_index], n - max_index, k) + max_index;
-        }
-        return r1;
+        printf("%d ", arr[i]);
     }
-    else
+    printf("\n");
+    max_index = max(arr, n);
+    r1 = binarySearch(arr, 0, max_index - 1, k);
+    if (r1 == -1)
     {
-        printf("Your arry is not bitonic array");
+        r1 = descendingBinarySearch(arr, max_index, n - 1, k);
     }
-    return -1;
+
+    return r1;
 }
 int main()
 {
@@ -160,10 +132,13 @@ int main()
         r = bitsearch(arr, n, k);
         if (r == -1)
         {
-            printf("Your element find not find the array");
+            printf("Your element not find the array");
         }
-
-        printf("Your element find at index number:%d", r);
+        else
+        {
+            printf("Your element find at index number:%d", r);
+        }
     }
+
     return 0;
 }
