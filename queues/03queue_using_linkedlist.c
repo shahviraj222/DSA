@@ -1,6 +1,7 @@
 // this program is not runing it give error
 #include <stdio.h>
-#include <stdlib.h>
+#include<stdlib.h>
+
 struct Node
 {
     int data;
