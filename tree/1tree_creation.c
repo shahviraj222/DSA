@@ -1,6 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-// queue using linked list
+// this function is used to understand how i create my first tree 
 #include <stdio.h>
 #include <stdlib.h>
 // this is use for creating tree
@@ -10,6 +8,7 @@ struct Node
     int data;
     struct Node* right_child;
 };
+// this queue is used store the address of all the tree
 struct queue
 {
    struct Node* p;
@@ -83,11 +82,14 @@ int main()
     t4->data=55;
     t3->data=75;
 
+// this is type of list which store the address of all tree which is created 
     struct queue q1;
     q1.p=t1;
     struct queue *q2;
     q2=NULL;
-      q2=enqueue(t1,q2);
+
+    //only in fisrt case you have save q2 because you are giving by value 
+      q2=enqueue(t1,q2); //this is imp
        enqueue(t2,q2);
        enqueue(t3,q2);
        enqueue(t4,q2);
