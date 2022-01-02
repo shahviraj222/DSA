@@ -87,13 +87,15 @@ int main()
     q1.p=t1;
     struct queue *q2;
     q2=NULL;
-
+    
     //only in fisrt case you have save q2 because you are giving by value 
       q2=enqueue(t1,q2); //this is imp
        enqueue(t2,q2);
        enqueue(t3,q2);
        enqueue(t4,q2);
-    
+    //    problem in q2
+    dequeue(q2);
+    dequeue(q2);
     for (int i =1 ; i <5; i++)
     {
         printf("%d ",q2->p->data);
