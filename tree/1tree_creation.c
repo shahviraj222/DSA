@@ -45,7 +45,8 @@ struct queue* enqueue(struct Node* p,struct queue* q)
     r=q;
     return r;
 }
-// this function deleting the dequeue
+// this function deleting the dequeue 
+// this function delete my tree as it call so this is not recommanded 
 struct Node* dequeue(struct queue* q1)
 {
      struct Node *r;
@@ -53,7 +54,7 @@ struct Node* dequeue(struct queue* q1)
     if (q1==NULL)
         printf("Queue is Empty\n");
     else
-    {
+    {   
         r=q1->p;
         t=q1->p;
         q1=q1->next;
@@ -87,7 +88,7 @@ int main()
     q1.p=t1;
     struct queue *q2;
     q2=NULL;
-    
+
     //only in fisrt case you have save q2 because you are giving by value 
       q2=enqueue(t1,q2); //this is imp
        enqueue(t2,q2);

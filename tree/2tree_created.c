@@ -113,10 +113,21 @@ struct Node* create(struct Node* root)
     //  printf("Root values is %d",root->data);    
     return root;
 } 
+void preorder(struct Node* p)
+{
+    if (p)
+    {
+        printf("%d ",p->data);
+        preorder(p->left_child);
+        preorder(p->right_child);
+    }
+    
+}
 int main()
 {
    struct Node* root=NULL;
    root=create(root);
-   printf("Root values is %d",root->data);
+//    printf("Root values is %d",root->data);
+preorder(root);
    return 0;
 }
