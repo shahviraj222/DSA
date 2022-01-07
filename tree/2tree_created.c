@@ -128,6 +128,6 @@ int main()
    struct Node* root=NULL;
    root=create(root);
 //    printf("Root values is %d",root->data);
-preorder(root);
+   preorder(root);
    return 0;
 }
