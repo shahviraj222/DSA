@@ -138,7 +138,9 @@ struct queue* dequeue_last(struct queue* q1)
     }
     return q1;
 }
-void preorder(struct Node* p)
+
+//isme right tree me nahi ja raha hai some error
+void Ipreorder(struct Node* p)
 {
     struct queue* st=NULL;
     while (p!=NULL || st!=NULL)
@@ -159,7 +161,16 @@ void preorder(struct Node* p)
     }
     
 }
-
+void preorder(struct Node* p)
+{
+    if (p)
+    {
+        printf("%d ",p->data);
+        preorder(p->left_child);
+        preorder(p->right_child);
+    }
+    
+}
 int main()
 {
    struct Node* root=NULL;

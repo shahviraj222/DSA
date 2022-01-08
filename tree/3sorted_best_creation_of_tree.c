@@ -6,7 +6,6 @@ struct node
     int data;
     struct node *left, *right;
 };
-
 struct node *create(int data)
 {
     struct node *tree = (struct node *)malloc(sizeof(struct node));
