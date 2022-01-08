@@ -8,6 +8,11 @@
         "deque": "c",
         "forward_list": "c",
         "list": "c",
-        "vector": "c"
+        "vector": "c",
+        "*.tcc": "c",
+        "bitset": "c",
+        "limits": "c",
+        "regex": "c",
+        "valarray": "c"
     }
 }
