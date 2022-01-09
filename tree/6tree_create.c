@@ -167,6 +167,33 @@ void preorder(struct Node *p)
         preorder(p->right_child);
     }
 }
+
+// finding height of tree
+int height_tree(struct Node *root)
+{
+    if (root->left_child==NULL && root->right_child==NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        if (root)
+        {
+            int x,y;
+            x=height_tree(root->left_child);
+            y=height_tree(root->left_child);
+            if (x>y)
+            {
+                return x+1;
+            }
+            else
+            {
+                return y+1;
+            }
+        }
+    }
+    return 0;
+}
 int main()
 {
     struct Node *root = NULL;
@@ -183,5 +210,6 @@ int main()
     root = create(root, arr, n);
     //    printf("Root values is %d",root->data);
     preorder(root);
+    printf("\nH=%d",height_tree(root));
     return 0;
 }
