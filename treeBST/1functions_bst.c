@@ -71,6 +71,7 @@ struct node *Isearch(struct node *root, int key)
 }
 
 //trraversal tree in Inorder way
+// one interesting thing is inorder wala printing always give sorted elements
 void inorder(struct node *root)
 {
     if (root)
