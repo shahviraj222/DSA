@@ -168,7 +168,7 @@ void preorder(struct Node *p)
     }
 }
 
-// finding height of tree
+// finding height of tree **video number 31** from tree.
 int height_tree(struct Node *root)
 {
     if (root->left_child==NULL && root->right_child==NULL)
@@ -177,11 +177,14 @@ int height_tree(struct Node *root)
     }
     else
     {
+        // by converting the return statement we find many other value like 
+        // 1.no of nodes (having n child)
+        // 2.sum of all elements in tree 
         if (root)
         {
             int x,y;
             x=height_tree(root->left_child);
-            y=height_tree(root->left_child);
+            y=height_tree(root->right_child);
             if (x>y)
             {
                 return x+1;
