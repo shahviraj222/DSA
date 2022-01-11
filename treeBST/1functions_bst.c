@@ -48,7 +48,9 @@ struct node *search(struct node *root, int key)
     }
     return NULL;
 }
-//searching key element in BST tree using itterative methode
+
+//searching key element in BST tree using itterative methode 
+// incomplete
 struct node *Isearch(struct node *root, int key)
 {
     if (root == NULL)
@@ -81,6 +83,95 @@ void inorder(struct node *root)
         inorder(root->right);
     }
 }
+int Height(struct node *root)
+{
+    if (root->left==NULL && root->right==NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        // by converting the return statement we find many other value like 
+        // 1.no of nodes (having n child)
+        // 2.sum of all elements in tree 
+        if (root)
+        {
+            int x,y;
+            x=Height(root->left);
+            y=Height(root->right);
+            if (x>y)
+            {
+                return x+1;
+            }
+            else
+            {
+                return y+1;
+            }
+        }
+    }
+    return 0;
+}
+struct node* inprede(struct node* root)
+{
+    while (root && root->right!=NULL)
+    {
+        root=root->right;
+    }
+    return root;
+}
+
+struct node* insuc(struct node* root)
+{
+    while (root && root->left!=NULL)
+    {
+        root=root->left;
+    }
+    return root;
+}
+struct node* delete(struct node* root,int key)
+{
+    //to store predecesor or succesor
+    struct node* q;
+    if (root==NULL)
+    {
+        return NULL;
+    }
+    // not able to under stand 
+    // if (root->left==NULL && root->right==NULL)
+    // {
+    //     free(root);
+    //     return NULL;
+    // }
+    if (key>root->data)
+    {
+        root->right=delete(root->right,key);
+    }
+    else if (key<root->data)
+    {
+        root->left=delete(root->left,key);
+    }
+    // element is found
+    else
+    {
+        // we delete and replace inorder predecessor
+        if (Height(root->left)>Height(root->right))
+        {
+            q=inprede(root->left);
+            // replaceing data 
+            root->data=q->data;
+            root->left=delete(root->left,q->data);
+        }
+        else
+        {
+            q=insuc(root->right);
+            root->data=q->data;
+            root->right=delete(root->right,q->data);
+        }
+        
+    }
+    
+    return root;
+}
 int main()
 {
     int n, t;
@@ -98,6 +189,7 @@ int main()
     {
         printf("Element not find");
     }
+    root=delete(root,20);
     inorder(root);
     return 0;
 }
