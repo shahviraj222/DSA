@@ -13,6 +13,7 @@
         "bitset": "c",
         "limits": "c",
         "regex": "c",
-        "valarray": "c"
+        "valarray": "c",
+        "EXP6B.C": "cpp"
     }
 }
