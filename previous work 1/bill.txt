@@ -1,0 +1,4 @@
+NO     DATE           NAME        TIME       NOROOMS       BILL AMOUNT                 
+1     May 15 2021     viraj     20:05:46     1             2000
+1     May 15 2021     virti     20:07:03     1             2000
+1     May 15 2021     siddhi     20:08:11     5             5000
