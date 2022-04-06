@@ -2,6 +2,34 @@
 #include <stdlib.h>
 #include <time.h>
 clock_t start_t, end_t, total_t;
+void quicksort(int *number, int first, int last)
+{
+    int i, j, pivot, temp;
+    if (first < last)
+    {
+        pivot = first;
+        i = first;
+        j = last;
+        while (i < j)
+        {
+            while (number[i] <= number[pivot] && i < last)
+                i++;
+            while (number[j] > number[pivot])
+                j--;
+            if (i < j)
+            {
+                temp = number[i];
+                number[i] = number[j];
+                number[j] = temp;
+            }
+        }
+        temp = number[pivot];
+        number[pivot] = number[j];
+        number[j] = temp;
+        quicksort(number, first, j - 1);
+        quicksort(number, j + 1, last);
+    }
+}
 void merge(int l, int mid, int h, int arr[]);
 void mergesort(int arr[], int l, int h)
 {
@@ -47,7 +75,7 @@ void merge(int l, int mid, int h, int arr[])
     while (i < n1 && j < n2)
     {
         if (L[i] <= R[j])
-      {
+        {
 
             arr[k] = L[i];
 
@@ -105,7 +133,17 @@ int main()
     t = clock() - t;
     double time_consumed = ((double)t) / CLOCKS_PER_SEC;
     printf("merge() took %f seconds for execution of some value.. \n", time_consumed);
-    printf("after the merging element become\n");
+    
+    for (int i = n; i > 1; i--)
+    {
+        a[i - 1] = i;
+    }
+    t = clock();
+    quicksort(a,0,n-1);
+    t = clock() - t;
+    time_consumed = ((double)t) / CLOCKS_PER_SEC;
+    printf("quick() took %f seconds for execution of some value.. \n", time_consumed);
+    // printf("after the merging element become\n");
     for (int i = 0; i < n; i++)
     {
         //    printf("%d ", a[i]);
