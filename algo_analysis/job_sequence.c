@@ -107,7 +107,7 @@ int main()
        take_job[i]=0;
     }
     
-    for (int i = 0; i < max; i++)
+    for (int i = 0; i <n; i++)
     {
         if (take_job[arr.dad[i]-1] == 0)
         {
@@ -117,15 +117,28 @@ int main()
         {
             for (int j = i-1; j > -1; j--)
             {
+                //we are checking previous postion is empty or not
                 if (take_job[j] == 0 && arr.dad[i]>j-1)
                 {
                     take_job[j] = arr.jobno[i];
                 }
+
+                // occupied hai but profit less than present wale se check else condition  
+                else
+                {
+                    if(arr.profit[i]>arr.profit[j]&& arr.dad[i]>j-1)
+                    {
+                        take_job[j] = arr.jobno[i];
+                    }
+                }
             }
+
+           
         }
     }
+    printf("MAX VALUE IS %d",max);
     printf("\nResult:");
-    for (int i = 0; i < max; i++)
+    for (int i = 0; i <max; i++)
     {
         printf("%d ", take_job[i]);
     }
