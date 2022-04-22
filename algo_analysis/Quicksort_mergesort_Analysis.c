@@ -123,7 +123,7 @@ int main()
     printf("enter the total number of element:");
     scanf("%d", &n);
     int *a = (int *)(malloc((n + 1) * sizeof(int)));
-    for (int i = n; i > 1; i--)
+    for (int i = 1; i <n; i++)
     {
         a[i - 1] = i;
     }
